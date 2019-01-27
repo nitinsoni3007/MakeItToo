@@ -25,6 +25,8 @@
 		18259B8821FDC47F0028A744 /* LoginNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8721FDC47F0028A744 /* LoginNav.swift */; };
 		18259B8A21FDD47D0028A744 /* FolderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */; };
 		18259B8F21FDE6B50028A744 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8E21FDE6B50028A744 /* ServiceManager.swift */; };
+		18259B9221FE27FA0028A744 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9121FE27FA0028A744 /* Validations.swift */; };
+		18259B9421FE2EED0028A744 /* PopUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9321FE2EED0028A744 /* PopUps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		18259B8721FDC47F0028A744 /* LoginNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNav.swift; sourceTree = "<group>"; };
 		18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailsViewController.swift; sourceTree = "<group>"; };
 		18259B8E21FDE6B50028A744 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		18259B9121FE27FA0028A744 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		18259B9321FE2EED0028A744 /* PopUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		1815A5EB21FC826A0052A2CE /* MakeItToo */ = {
 			isa = PBXGroup;
 			children = (
+				18259B9021FE27C80028A744 /* Extensions */,
 				18259B8421FDB90D0028A744 /* Resources */,
 				1815A62821FC83FE0052A2CE /* Viewcontrollers */,
 				1815A61F21FC83330052A2CE /* Authorisation */,
@@ -188,6 +193,15 @@
 				18259B8E21FDE6B50028A744 /* ServiceManager.swift */,
 			);
 			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		18259B9021FE27C80028A744 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18259B9121FE27FA0028A744 /* Validations.swift */,
+				18259B9321FE2EED0028A744 /* PopUps.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,8 +339,10 @@
 				18259B8621FDB91C0028A744 /* Constants.swift in Sources */,
 				1815A5EF21FC826A0052A2CE /* ViewController.swift in Sources */,
 				18259B8821FDC47F0028A744 /* LoginNav.swift in Sources */,
+				18259B9421FE2EED0028A744 /* PopUps.swift in Sources */,
 				18259B8F21FDE6B50028A744 /* ServiceManager.swift in Sources */,
 				1815A62721FC838E0052A2CE /* ContainerViewController.swift in Sources */,
+				18259B9221FE27FA0028A744 /* Validations.swift in Sources */,
 				18259B8321FDB0C90028A744 /* ScannerViewController.swift in Sources */,
 				1815A62A21FC840A0052A2CE /* HomeViewController.swift in Sources */,
 				1815A62521FC83540052A2CE /* ForgotPasswordViewController.swift in Sources */,

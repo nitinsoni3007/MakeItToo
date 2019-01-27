@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +25,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLoginAction(_ sender: Any) {
-        (self.navigationController as! LoginNav).loginDelegate?.userLoggedIn()
+        if areDataValid() {
+        ServiceManager.sharedManager.callAPI(APIAction.LOGIN, method: "POST", params: ["email":txtEmail.text!,"password":txtPassword.text!], success: { (response) in
+            print("resp = \(response)")
+            UserDefaults.standard.set(true, forKey: GlobalConstants.USER_LOGGEDIN)
+            DispatchQueue.main.async {
+                (self.navigationController as! LoginNav).loginDelegate?.userLoggedIn()
+            }
+        }) { (reasonStr) in
+            print("response = \(reasonStr)")
+        }
+        }
+    }
+    
+    func areDataValid() -> Bool {
+        var msg = ""
+        if let emailStr = txtEmail.text{
+            let emailAdd = emailStr.trimmingCharacters(in: .whitespaces)
+            if !emailAdd.isValidEmail(){
+                msg = "Email is not valid"
+            }
+        }
+        if let password = txtPassword.text {
+            if password.count < 5 && password.count > 12{
+                msg = "Password must be 5 to 12 characters long"
+            }
+        }
+        if msg.count > 0 {
+            self.showAlert(title: nil, message: msg)
+            return false
+        }
+        return true
     }
     
     @IBAction func btnRegisterAction(_ sender: Any) {
@@ -30,15 +63,9 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(registrationVC, animated: true)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //touch delegate
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    */
 
 }

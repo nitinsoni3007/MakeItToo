@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController, LoginNavDelegate {
     var loginNav: LoginNav!
+    var containerVC: ContainerViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(logMeOut), name: NSNotification.Name.init(rawValue: "logMeOut"), object: nil)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func logMeOut() {
+        UserDefaults.standard.set(false, forKey: GlobalConstants.USER_LOGGEDIN)
+        if containerVC != nil {
+            containerVC!.view.removeFromSuperview()
+            containerVC!.removeFromParentViewController()
+            containerVC = nil
+        }
+        showLoginView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,19 +33,25 @@ class ViewController: UIViewController, LoginNavDelegate {
         if UserDefaults.standard.bool(forKey: GlobalConstants.USER_LOGGEDIN) {
             showHome()
         }else {
-            loginNav = self.storyboard?.instantiateViewController(withIdentifier: "LoginNav") as! LoginNav
-            loginNav.loginDelegate = self
-            self.addChildViewController(loginNav)
-            self.view.addSubview(loginNav.view)
-            loginNav.didMove(toParentViewController: self)
+            showLoginView()
         }
     }
     
+    func showLoginView() {
+        loginNav = self.storyboard?.instantiateViewController(withIdentifier: "LoginNav") as! LoginNav
+        loginNav.loginDelegate = self
+        self.addChildViewController(loginNav)
+        self.view.addSubview(loginNav.view)
+        loginNav.didMove(toParentViewController: self)
+    }
+    
     func showHome() {
-        let containerVC = self.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as! ContainerViewController
-        self.addChildViewController(containerVC)
-        self.view.addSubview(containerVC.view)
-        containerVC.didMove(toParentViewController: self)
+        if containerVC == nil {
+        containerVC = self.storyboard?.instantiateViewController(withIdentifier: "ContainerViewController") as? ContainerViewController
+        self.addChildViewController(containerVC!)
+        self.view.addSubview(containerVC!.view)
+        containerVC!.didMove(toParentViewController: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

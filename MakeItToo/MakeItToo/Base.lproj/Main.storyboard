@@ -211,9 +211,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-Tk-Wjw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-gb-Apw">
+                                        <rect key="frame" x="295" y="0.0" width="80" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="kk3-aO-vhk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnLogoutAction:" destination="3C4-nC-WY3" eventType="touchUpInside" id="boP-aO-1jc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.75686274509803919" green="0.031372549019607843" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="UFB-gb-Apw" firstAttribute="top" secondItem="Qv9-Tk-Wjw" secondAttribute="top" id="7kK-nc-8Jh"/>
+                                    <constraint firstAttribute="trailing" secondItem="UFB-gb-Apw" secondAttribute="trailing" id="A75-BT-OPx"/>
                                     <constraint firstAttribute="height" constant="44" id="xM9-n1-t7j"/>
+                                    <constraint firstAttribute="bottom" secondItem="UFB-gb-Apw" secondAttribute="bottom" id="xW8-fM-V5h"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-Go-4Fh">
@@ -616,7 +634,7 @@
                                             <constraint firstAttribute="height" constant="40" id="RvN-DN-oHk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -688,6 +706,10 @@
                         <viewLayoutGuide key="safeArea" id="Oc0-fk-onx"/>
                     </view>
                     <navigationItem key="navigationItem" id="1ba-DQ-zxe"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="S4Z-YO-41H" id="738-un-EMX"/>
+                        <outlet property="txtPassword" destination="18M-fA-OdJ" id="UMP-2M-Ram"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2N-WQ-9BD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

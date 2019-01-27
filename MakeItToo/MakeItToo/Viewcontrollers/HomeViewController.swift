@@ -60,6 +60,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    @IBAction func btnLogoutAction(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name.init(rawValue: "logMeOut"), object: nil)
+    }
+    
     //MARK: collectionview delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrFolders.count
