@@ -10,6 +10,9 @@ import Foundation
 
 struct GlobalConstants{
     static let USER_LOGGEDIN = "userLoggedIn"
+    static let USER_NAME = "userName"
+    static let USER_ID = "userId"
+    static let AUTH_TOKEN = "authToken"
 }
 
 struct APIAction {

@@ -14,10 +14,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var lblNoItem: UILabel!
     @IBOutlet weak var createNewFolderHUD: UIView!
     @IBOutlet weak var txtFolderName: UITextField!
+    @IBOutlet weak var lblUserName: UILabel!
     var arrFolders = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblUserName.text = "Hi \(UserDefaults.standard.value(forKey: GlobalConstants.USER_NAME)!)!"
         loadFolders()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hudTapped))
         createNewFolderHUD.addGestureRecognizer(tapGesture)

@@ -27,10 +27,15 @@ class LoginViewController: UIViewController {
     @IBAction func btnLoginAction(_ sender: Any) {
         if areDataValid() {
         ServiceManager.sharedManager.callAPI(APIAction.LOGIN, method: "POST", params: ["email":txtEmail.text!,"password":txtPassword.text!], success: { (response) in
-            print("resp = \(response)")
+            if response["status"] as! String == "success" {
+                let userData = response["data"] as! [String: AnyObject]
             UserDefaults.standard.set(true, forKey: GlobalConstants.USER_LOGGEDIN)
+            UserDefaults.standard.set(userData["userName"] as! String, forKey: GlobalConstants.USER_NAME)
+            UserDefaults.standard.set(userData["userId"] as! String, forKey: GlobalConstants.USER_ID)
+            UserDefaults.standard.set(userData["authToken"] as! String, forKey: GlobalConstants.AUTH_TOKEN)
             DispatchQueue.main.async {
                 (self.navigationController as! LoginNav).loginDelegate?.userLoggedIn()
+            }
             }
         }) { (reasonStr) in
             print("response = \(reasonStr)")

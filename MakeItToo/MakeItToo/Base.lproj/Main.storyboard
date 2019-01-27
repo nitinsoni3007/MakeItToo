@@ -70,7 +70,7 @@
                                             <constraint firstAttribute="height" constant="40" id="NlB-2l-Qlw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjE-SA-pEP">
                                         <rect key="frame" x="10" y="152" width="280" height="40"/>
@@ -79,7 +79,7 @@
                                             <constraint firstAttribute="height" constant="40" id="LS3-8u-F7x"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tgm-7W-b8b">
                                         <rect key="frame" x="10" y="200" width="280" height="40"/>
@@ -181,6 +181,14 @@
                         <viewLayoutGuide key="safeArea" id="1qN-Ki-07B"/>
                     </view>
                     <navigationItem key="navigationItem" id="k5g-9P-w9I"/>
+                    <connections>
+                        <outlet property="txtAddress" destination="JN2-ib-k5K" id="fY6-Ny-fmU"/>
+                        <outlet property="txtConfirmPassword" destination="lOC-8b-yr2" id="BTp-WD-63q"/>
+                        <outlet property="txtEmail" destination="JjE-SA-pEP" id="s07-w9-rKM"/>
+                        <outlet property="txtName" destination="raX-bf-Aer" id="UYp-wq-PFJ"/>
+                        <outlet property="txtPassword" destination="Tgm-7W-b8b" id="oIc-JT-acR"/>
+                        <outlet property="txtPhone" destination="4xl-l4-7Iw" id="qQM-Jf-mj9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhq-Df-Ylv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,6 +220,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-Tk-Wjw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-xE-jOg">
+                                        <rect key="frame" x="8" y="11" width="71.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-gb-Apw">
                                         <rect key="frame" x="295" y="0.0" width="80" height="44"/>
                                         <constraints>
@@ -230,6 +244,8 @@
                                 <constraints>
                                     <constraint firstItem="UFB-gb-Apw" firstAttribute="top" secondItem="Qv9-Tk-Wjw" secondAttribute="top" id="7kK-nc-8Jh"/>
                                     <constraint firstAttribute="trailing" secondItem="UFB-gb-Apw" secondAttribute="trailing" id="A75-BT-OPx"/>
+                                    <constraint firstItem="dRO-xE-jOg" firstAttribute="centerY" secondItem="Qv9-Tk-Wjw" secondAttribute="centerY" id="WZq-XR-UOY"/>
+                                    <constraint firstItem="dRO-xE-jOg" firstAttribute="leading" secondItem="Qv9-Tk-Wjw" secondAttribute="leading" constant="8" id="nfd-gc-hEe"/>
                                     <constraint firstAttribute="height" constant="44" id="xM9-n1-t7j"/>
                                     <constraint firstAttribute="bottom" secondItem="UFB-gb-Apw" secondAttribute="bottom" id="xW8-fM-V5h"/>
                                 </constraints>
@@ -393,6 +409,7 @@
                         <outlet property="collectionView" destination="VdV-Pk-msX" id="bfP-XM-gMD"/>
                         <outlet property="createNewFolderHUD" destination="Sx2-ug-IPV" id="d3Y-28-gmV"/>
                         <outlet property="lblNoItem" destination="v9A-Ft-kfP" id="pO8-8v-6Fv"/>
+                        <outlet property="lblUserName" destination="dRO-xE-jOg" id="3rk-55-5L0"/>
                         <outlet property="txtFolderName" destination="LrJ-cu-OB0" id="usG-gu-pEy"/>
                     </connections>
                 </viewController>
