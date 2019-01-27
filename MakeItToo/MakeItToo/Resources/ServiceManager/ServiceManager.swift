@@ -25,6 +25,9 @@ class ServiceManager {
         str = String(str.dropLast())
         request.httpBody = str.data(using: .utf8)!
         }
+        if action != APIAction.LOGIN && action != APIAction.REGISTER {
+            request.addValue(UserDefaults.standard.value(forKey: GlobalConstants.AUTH_TOKEN) as! String, forHTTPHeaderField: "authToken")
+        }
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: request){ (data, response, err) in
             do {

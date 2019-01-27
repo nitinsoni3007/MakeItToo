@@ -58,7 +58,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 collectionView.isHidden = false
                 collectionView.reloadData()
                 txtFolderName.text = ""
+                addFolder(folderName)
             }
+        }
+    }
+    
+    func addFolder(_ folderName: String) {
+        ServiceManager.sharedManager.callAPI(APIAction.CREATE_FOLDER, method: "POST", params: ["folderName":folderName], success: { (response) in
+            print("resp = \(response)")
+        }) { (reason) in
+            self.showAlert(title: "Folder creation faild", message: reason)
         }
     }
     
