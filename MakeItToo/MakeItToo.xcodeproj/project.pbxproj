@@ -15,6 +15,16 @@
 		1815A5FA21FC826B0052A2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1815A5F821FC826B0052A2CE /* LaunchScreen.storyboard */; };
 		1815A60521FC826B0052A2CE /* MakeItTooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A60421FC826B0052A2CE /* MakeItTooTests.swift */; };
 		1815A61021FC826B0052A2CE /* MakeItTooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A60F21FC826B0052A2CE /* MakeItTooUITests.swift */; };
+		1815A62121FC83330052A2CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A62021FC83330052A2CE /* LoginViewController.swift */; };
+		1815A62321FC83430052A2CE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A62221FC83430052A2CE /* SignupViewController.swift */; };
+		1815A62521FC83540052A2CE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A62421FC83540052A2CE /* ForgotPasswordViewController.swift */; };
+		1815A62721FC838E0052A2CE /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A62621FC838E0052A2CE /* ContainerViewController.swift */; };
+		1815A62A21FC840A0052A2CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A62921FC840A0052A2CE /* HomeViewController.swift */; };
+		18259B8321FDB0C90028A744 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8221FDB0C90028A744 /* ScannerViewController.swift */; };
+		18259B8621FDB91C0028A744 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8521FDB91C0028A744 /* Constants.swift */; };
+		18259B8821FDC47F0028A744 /* LoginNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8721FDC47F0028A744 /* LoginNav.swift */; };
+		18259B8A21FDD47D0028A744 /* FolderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */; };
+		18259B8F21FDE6B50028A744 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8E21FDE6B50028A744 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		1815A60B21FC826B0052A2CE /* MakeItTooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeItTooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1815A60F21FC826B0052A2CE /* MakeItTooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItTooUITests.swift; sourceTree = "<group>"; };
 		1815A61121FC826B0052A2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1815A62021FC83330052A2CE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1815A62221FC83430052A2CE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		1815A62421FC83540052A2CE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1815A62621FC838E0052A2CE /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		1815A62921FC840A0052A2CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18259B8221FDB0C90028A744 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		18259B8521FDB91C0028A744 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18259B8721FDC47F0028A744 /* LoginNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNav.swift; sourceTree = "<group>"; };
+		18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailsViewController.swift; sourceTree = "<group>"; };
+		18259B8E21FDE6B50028A744 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,9 @@
 		1815A5EB21FC826A0052A2CE /* MakeItToo */ = {
 			isa = PBXGroup;
 			children = (
+				18259B8421FDB90D0028A744 /* Resources */,
+				1815A62821FC83FE0052A2CE /* Viewcontrollers */,
+				1815A61F21FC83330052A2CE /* Authorisation */,
 				1815A5EC21FC826A0052A2CE /* AppDelegate.swift */,
 				1815A5EE21FC826A0052A2CE /* ViewController.swift */,
 				1815A5F021FC826A0052A2CE /* Main.storyboard */,
@@ -106,6 +129,8 @@
 				1815A5F821FC826B0052A2CE /* LaunchScreen.storyboard */,
 				1815A5FB21FC826B0052A2CE /* Info.plist */,
 				1815A5F321FC826A0052A2CE /* MakeItToo.xcdatamodeld */,
+				1815A62621FC838E0052A2CE /* ContainerViewController.swift */,
+				18259B8521FDB91C0028A744 /* Constants.swift */,
 			);
 			path = MakeItToo;
 			sourceTree = "<group>";
@@ -126,6 +151,43 @@
 				1815A61121FC826B0052A2CE /* Info.plist */,
 			);
 			path = MakeItTooUITests;
+			sourceTree = "<group>";
+		};
+		1815A61F21FC83330052A2CE /* Authorisation */ = {
+			isa = PBXGroup;
+			children = (
+				1815A62021FC83330052A2CE /* LoginViewController.swift */,
+				1815A62221FC83430052A2CE /* SignupViewController.swift */,
+				1815A62421FC83540052A2CE /* ForgotPasswordViewController.swift */,
+				18259B8721FDC47F0028A744 /* LoginNav.swift */,
+			);
+			path = Authorisation;
+			sourceTree = "<group>";
+		};
+		1815A62821FC83FE0052A2CE /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				1815A62921FC840A0052A2CE /* HomeViewController.swift */,
+				18259B8221FDB0C90028A744 /* ScannerViewController.swift */,
+				18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */,
+			);
+			path = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		18259B8421FDB90D0028A744 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18259B8D21FDE6620028A744 /* ServiceManager */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18259B8D21FDE6620028A744 /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				18259B8E21FDE6B50028A744 /* ServiceManager.swift */,
+			);
+			path = ServiceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1815A62121FC83330052A2CE /* LoginViewController.swift in Sources */,
+				18259B8621FDB91C0028A744 /* Constants.swift in Sources */,
 				1815A5EF21FC826A0052A2CE /* ViewController.swift in Sources */,
+				18259B8821FDC47F0028A744 /* LoginNav.swift in Sources */,
+				18259B8F21FDE6B50028A744 /* ServiceManager.swift in Sources */,
+				1815A62721FC838E0052A2CE /* ContainerViewController.swift in Sources */,
+				18259B8321FDB0C90028A744 /* ScannerViewController.swift in Sources */,
+				1815A62A21FC840A0052A2CE /* HomeViewController.swift in Sources */,
+				1815A62521FC83540052A2CE /* ForgotPasswordViewController.swift in Sources */,
+				18259B8A21FDD47D0028A744 /* FolderDetailsViewController.swift in Sources */,
+				1815A62321FC83430052A2CE /* SignupViewController.swift in Sources */,
 				1815A5ED21FC826A0052A2CE /* AppDelegate.swift in Sources */,
 				1815A5F521FC826A0052A2CE /* MakeItToo.xcdatamodeld in Sources */,
 			);
@@ -436,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MakeItToo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MakeItToo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
