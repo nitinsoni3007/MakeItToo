@@ -13,15 +13,39 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var cvFile: UICollectionView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblNoItem: UILabel!
-    var arrFiles = [String]()
-    var folder = ""
+    var arrFileContents = [FileContent]()
+    var folder : Folder!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblTitle.text = folder
-        if arrFiles.count == 0 {
-            lblNoItem.isHidden = false
-        }
+        lblTitle.text = folder.folderName
+        
+        fetchContents(folder.folderId!)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func fetchContents(_ folderId: String) {
+        ServiceManager.sharedManager.callAPI(APIAction.GET_CONTENTS + folderId, method: "GET", params:[String: String](), success: { (resp) in
+            print("resp = \(resp)")
+            let arrDicts = resp["data"] as? [[String: String]] ?? [[String: String]]()
+            self.arrFileContents = arrDicts.map{FileContent.init($0)}
+            DispatchQueue.main.async {
+               
+            if self.arrFileContents.count == 0 {
+                self.lblNoItem.isHidden = false
+                self.cvFile.isHidden = true
+            }else {
+                self.lblNoItem.isHidden = true
+                self.cvFile.isHidden = false
+                self.cvFile.reloadData()
+                }
+            }
+        }) { (reason) in
+            print("failedWith reason = \(reason)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +56,7 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func btnScanAction(_ sender: Any) {
         let scannerVC = self.storyboard?.instantiateViewController(withIdentifier: "ScannerViewController") as! ScannerViewController
         scannerVC.delegate = self
+        scannerVC.folder = self.folder
         navigationController?.pushViewController(scannerVC, animated: true)
     }
     
@@ -41,7 +66,7 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK : collection view delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrFiles.count
+        return arrFileContents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,11 +74,28 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         let imgView = cell.contentView.viewWithTag(101) as! UIImageView
 //        imgView.image = UIImage(named: arrFiles[indexPath.item])
+        DispatchQueue.global().async {
+            if let url = URL(string: self.arrFileContents[indexPath.item].imageSmall){
+            do {
+            let imgData = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    imgView.image = UIImage(data: imgData)
+                }
+            }catch {
+                
+            }
+            }
+        }
         return cell
     }
     
     //MARK: scannerView delegate
-    func didAddFile() {
+    func didAddFile(_ img: UIImage) {
+        
+//        self.arrFiles.append(img)
+//            self.cvFile.reloadData()
+        self.fetchContents(folder.folderId!)
+        
         
     }
     

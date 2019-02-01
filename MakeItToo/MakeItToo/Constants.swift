@@ -20,7 +20,11 @@ struct APIAction {
     static let LOGIN = "login"
     static let CREATE_FOLDER = "folder/createFolder"
     static let UPLOAD_FILE = "folder/uploadImage"
+    static let GET_FOLDERS = "folder/getFolder"
+    static let GET_CONTENTS = "folder/getImage?folderId="
 }
+
+//ttp://swint.co.md-76.webhostbox.net/makeittoo/index.php/service/folder/uploadImage
 
 //registration :
 

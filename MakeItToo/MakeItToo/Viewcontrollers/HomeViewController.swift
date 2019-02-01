@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var createNewFolderHUD: UIView!
     @IBOutlet weak var txtFolderName: UITextField!
     @IBOutlet weak var lblUserName: UILabel!
-    var arrFolders = [String]()
+    var arrFolders = [Folder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         loadFolders()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hudTapped))
         createNewFolderHUD.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        for vc in self.navigationController!.viewControllers {
+            print("vc types = \(vc)")
+        }
     }
     
     @objc func hudTapped() {
@@ -35,9 +42,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func loadFolders() {
         //if no folder
-        lblNoItem.isHidden = false
+//        lblNoItem.isHidden = false
         //else
 //        collectionView.isHidden = false
+        ServiceManager.sharedManager.callAPI(APIAction.GET_FOLDERS, method: "GET", params: [String:String](), success: { (response) in
+            print("resp = \(response)")
+            let arrDicts = response["data"] as? [[String: String]] ?? [[String: String]]()
+            self.arrFolders = arrDicts.map{Folder.init($0)}
+            DispatchQueue.main.async {
+                if self.arrFolders.count > 0 {
+                self.createNewFolderHUD.isHidden = true
+                //                arrFolders.append(folderName)
+                self.lblNoItem.isHidden = true
+                self.collectionView.isHidden = false
+                self.collectionView.reloadData()
+                }else {
+                    self.createNewFolderHUD.isHidden = true
+                    //                arrFolders.append(folderName)
+                    self.lblNoItem.isHidden = false
+                    self.collectionView.isHidden = true
+                }
+            }
+            
+        }) { (reason) in
+            print("failed = \(reason)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,11 +82,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func btnCreateAction(_ sender: Any) {
         if let folderName = txtFolderName.text{
             if !folderName.isEmpty {
-                createNewFolderHUD.isHidden = true
-                arrFolders.append(folderName)
-                lblNoItem.isHidden = true
-                collectionView.isHidden = false
-                collectionView.reloadData()
+//                createNewFolderHUD.isHidden = true
+////                arrFolders.append(folderName)
+//                lblNoItem.isHidden = true
+//                collectionView.isHidden = false
+//                collectionView.reloadData()
                 txtFolderName.text = ""
                 addFolder(folderName)
             }
@@ -66,6 +96,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func addFolder(_ folderName: String) {
         ServiceManager.sharedManager.callAPI(APIAction.CREATE_FOLDER, method: "POST", params: ["folderName":folderName], success: { (response) in
             print("resp = \(response)")
+            self.loadFolders()
         }) { (reason) in
             self.showAlert(title: "Folder creation faild", message: reason)
         }
@@ -84,14 +115,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cellId = "folderCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         let lblFolderName = cell.contentView.viewWithTag(102) as! UILabel
-        lblFolderName.text = arrFolders[indexPath.item]
+        lblFolderName.text = arrFolders[indexPath.item].folderName
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let folderName = arrFolders[indexPath.item]
+        let folder = arrFolders[indexPath.item]
         let folderDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "FolderDetailsViewController") as! FolderDetailsViewController
-        folderDetailsVC.folder = folderName
+        folderDetailsVC.folder = folder
         navigationController?.pushViewController(folderDetailsVC, animated: true)
     }
 
