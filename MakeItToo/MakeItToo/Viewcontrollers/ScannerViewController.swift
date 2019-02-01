@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 protocol ScannerViewDelegate {
-    func didAddFile(_ img: UIImage)
+    func didAddFile()
 }
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -21,6 +21,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     @IBOutlet var scennerView:UIView!
     var imgPickerController: UIImagePickerController!
     var folder: Folder!
+    var imgScanned = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if imgScanned == false {
         openbarCodeScanner()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,38 +151,42 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         self.imgPickerController = UIImagePickerController()
         self.imgPickerController.sourceType = .camera
         self.imgPickerController.delegate = self
-        self.present(self.imgPickerController, animated: true, completion: nil)
+//        self.present(self.imgPickerController, animated: true, completion: nil)
+        self.addChildViewController(self.imgPickerController)
+        self.view.addSubview(self.imgPickerController.view)
+        self.imgPickerController.didMove(toParentViewController: self)
+    }
+    
+    func hideImagePicker() {
+        self.imgPickerController.view.removeFromSuperview()
+        self.imgPickerController.removeFromParentViewController()
     }
 
     
     //MARK : Image picker delegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 //        self.navigationController?.popViewController(animated: true)
-        self.imgPickerController.dismiss(animated: true, completion: nil)
+//        self.imgPickerController.dismiss(animated: true, completion: nil)
+        self.hideImagePicker()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let imgData = UIImageJPEGRepresentation(img, 0.5)//UIImagePNGRepresentation(img)
-        self.imgPickerController.dismiss(animated: false, completion: nil)
+        let imgData = UIImagePNGRepresentation(img)//UIImageJPEGRepresentation(img, 0.5)//
+        self.imgScanned = true
+//        self.imgPickerController.dismiss(animated: false, completion: nil)
+        
         uploadImage(imgData!, img: img)
+        
     }
     
     func uploadImage(_ imgData: Data, img: UIImage) {
-        ServiceManager.sharedManager.uploadImage(imgData, folderId: folder.folderId!) { (resp) in
-            print("resp = \(resp)")
-//            self.dismiss(animated: true, completion: nil)
-//            (UIApplication.shared.delegate as! AppDelegate).currImage = img
-            
-            DispatchQueue.main.async {
-//                (UIApplication.shared.delegate as! AppDelegate).currImage = img
-                
-//                self.navigationController?.popViewController(animated: false)
-//            self.delegate?.didAddFile(img)
-//                for vc in self.navigationController!.viewControllers {
-//                    print("vc types = \(vc)")
-//                }
-            }
+        
+        ServiceManager.sharedManager.uploadImageNew(imgData, folderId: folder.folderId!) { (response) in
+            print("resp = \(response)")
+            self.hideImagePicker()
+            self.delegate?.didAddFile()
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

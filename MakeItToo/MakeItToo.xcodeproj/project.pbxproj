@@ -27,9 +27,13 @@
 		18259B8F21FDE6B50028A744 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B8E21FDE6B50028A744 /* ServiceManager.swift */; };
 		18259B9221FE27FA0028A744 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9121FE27FA0028A744 /* Validations.swift */; };
 		18259B9421FE2EED0028A744 /* PopUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9321FE2EED0028A744 /* PopUps.swift */; };
+		18B74BAE2204B01200CE6253 /* FileContentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B74BAD2204B01200CE6253 /* FileContentDetailsViewController.swift */; };
 		18E325DE2202F4CC0084B5E7 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325DD2202F4CC0084B5E7 /* Folder.swift */; };
 		18E325E0220306090084B5E7 /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325DF220306090084B5E7 /* ImageCaptureViewController.swift */; };
 		18E325E2220366C00084B5E7 /* FileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325E1220366C00084B5E7 /* FileContent.swift */; };
+		46F0AD47DB2F40D80E1D3364 /* Pods_MakeItTooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EC6F39327E2B241E6FBB63 /* Pods_MakeItTooTests.framework */; };
+		633D83953456AAC9F360FD09 /* Pods_MakeItTooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEF73713A0F1017445A5242 /* Pods_MakeItTooUITests.framework */; };
+		E6170181360BF8226F5D4D54 /* Pods_MakeItToo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCEBCE13FD6DDFC9A30B4F6 /* Pods_MakeItToo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,9 +80,19 @@
 		18259B8E21FDE6B50028A744 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		18259B9121FE27FA0028A744 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		18259B9321FE2EED0028A744 /* PopUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUps.swift; sourceTree = "<group>"; };
+		18B74BAD2204B01200CE6253 /* FileContentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContentDetailsViewController.swift; sourceTree = "<group>"; };
 		18E325DD2202F4CC0084B5E7 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		18E325DF220306090084B5E7 /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
 		18E325E1220366C00084B5E7 /* FileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContent.swift; sourceTree = "<group>"; };
+		1905E5101702DF5A6FABE99F /* Pods-MakeItTooUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItTooUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItTooUITests/Pods-MakeItTooUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		36FB99041234A6565672C0A0 /* Pods-MakeItTooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItTooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItTooTests/Pods-MakeItTooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EEF73713A0F1017445A5242 /* Pods_MakeItTooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeItTooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A772BBAFCE2E3FB4FB9AB25 /* Pods-MakeItToo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItToo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItToo/Pods-MakeItToo.debug.xcconfig"; sourceTree = "<group>"; };
+		76EC6F39327E2B241E6FBB63 /* Pods_MakeItTooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeItTooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77772C263E924CEF145F0270 /* Pods-MakeItTooUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItTooUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItTooUITests/Pods-MakeItTooUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8CCEBCE13FD6DDFC9A30B4F6 /* Pods_MakeItToo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeItToo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8BBDEF2732F6E4C4BE96AA4 /* Pods-MakeItToo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItToo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItToo/Pods-MakeItToo.release.xcconfig"; sourceTree = "<group>"; };
+		F24AA8F460E7FE79F68605B1 /* Pods-MakeItTooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeItTooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeItTooTests/Pods-MakeItTooTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6170181360BF8226F5D4D54 /* Pods_MakeItToo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F0AD47DB2F40D80E1D3364 /* Pods_MakeItTooTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633D83953456AAC9F360FD09 /* Pods_MakeItTooUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +130,8 @@
 				1815A60321FC826B0052A2CE /* MakeItTooTests */,
 				1815A60E21FC826B0052A2CE /* MakeItTooUITests */,
 				1815A5EA21FC826A0052A2CE /* Products */,
+				BC94AC49ED5CC138DA0AED80 /* Pods */,
+				DD8878176D79426C724236D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +201,7 @@
 				18259B8221FDB0C90028A744 /* ScannerViewController.swift */,
 				18259B8921FDD47D0028A744 /* FolderDetailsViewController.swift */,
 				18E325DF220306090084B5E7 /* ImageCaptureViewController.swift */,
+				18B74BAD2204B01200CE6253 /* FileContentDetailsViewController.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -221,6 +241,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BC94AC49ED5CC138DA0AED80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A772BBAFCE2E3FB4FB9AB25 /* Pods-MakeItToo.debug.xcconfig */,
+				B8BBDEF2732F6E4C4BE96AA4 /* Pods-MakeItToo.release.xcconfig */,
+				36FB99041234A6565672C0A0 /* Pods-MakeItTooTests.debug.xcconfig */,
+				F24AA8F460E7FE79F68605B1 /* Pods-MakeItTooTests.release.xcconfig */,
+				1905E5101702DF5A6FABE99F /* Pods-MakeItTooUITests.debug.xcconfig */,
+				77772C263E924CEF145F0270 /* Pods-MakeItTooUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD8878176D79426C724236D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CCEBCE13FD6DDFC9A30B4F6 /* Pods_MakeItToo.framework */,
+				76EC6F39327E2B241E6FBB63 /* Pods_MakeItTooTests.framework */,
+				4EEF73713A0F1017445A5242 /* Pods_MakeItTooUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1815A61421FC826B0052A2CE /* Build configuration list for PBXNativeTarget "MakeItToo" */;
 			buildPhases = (
+				A631E9B31DA584187A7AFA8C /* [CP] Check Pods Manifest.lock */,
 				1815A5E521FC826A0052A2CE /* Sources */,
 				1815A5E621FC826A0052A2CE /* Frameworks */,
 				1815A5E721FC826A0052A2CE /* Resources */,
+				4051699887C6F979169EA9DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1815A61721FC826B0052A2CE /* Build configuration list for PBXNativeTarget "MakeItTooTests" */;
 			buildPhases = (
+				917F776D5FA7C2C06112A4BC /* [CP] Check Pods Manifest.lock */,
 				1815A5FC21FC826B0052A2CE /* Sources */,
 				1815A5FD21FC826B0052A2CE /* Frameworks */,
 				1815A5FE21FC826B0052A2CE /* Resources */,
@@ -263,6 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1815A61A21FC826B0052A2CE /* Build configuration list for PBXNativeTarget "MakeItTooUITests" */;
 			buildPhases = (
+				3DC14A0DB2F16CAEB086D702 /* [CP] Check Pods Manifest.lock */,
 				1815A60721FC826B0052A2CE /* Sources */,
 				1815A60821FC826B0052A2CE /* Frameworks */,
 				1815A60921FC826B0052A2CE /* Resources */,
@@ -347,6 +394,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DC14A0DB2F16CAEB086D702 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MakeItTooUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4051699887C6F979169EA9DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MakeItToo/Pods-MakeItToo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MakeItToo/Pods-MakeItToo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		917F776D5FA7C2C06112A4BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MakeItTooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A631E9B31DA584187A7AFA8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MakeItToo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1815A5E521FC826A0052A2CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,6 +485,7 @@
 				1815A62721FC838E0052A2CE /* ContainerViewController.swift in Sources */,
 				18259B9221FE27FA0028A744 /* Validations.swift in Sources */,
 				18259B8321FDB0C90028A744 /* ScannerViewController.swift in Sources */,
+				18B74BAE2204B01200CE6253 /* FileContentDetailsViewController.swift in Sources */,
 				1815A62A21FC840A0052A2CE /* HomeViewController.swift in Sources */,
 				1815A62521FC83540052A2CE /* ForgotPasswordViewController.swift in Sources */,
 				18259B8A21FDD47D0028A744 /* FolderDetailsViewController.swift in Sources */,
@@ -540,6 +663,7 @@
 		};
 		1815A61521FC826B0052A2CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A772BBAFCE2E3FB4FB9AB25 /* Pods-MakeItToo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -559,6 +683,7 @@
 		};
 		1815A61621FC826B0052A2CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8BBDEF2732F6E4C4BE96AA4 /* Pods-MakeItToo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +703,7 @@
 		};
 		1815A61821FC826B0052A2CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36FB99041234A6565672C0A0 /* Pods-MakeItTooTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -598,6 +724,7 @@
 		};
 		1815A61921FC826B0052A2CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F24AA8F460E7FE79F68605B1 /* Pods-MakeItTooTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,6 +745,7 @@
 		};
 		1815A61B21FC826B0052A2CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1905E5101702DF5A6FABE99F /* Pods-MakeItTooUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,6 +765,7 @@
 		};
 		1815A61C21FC826B0052A2CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77772C263E924CEF145F0270 /* Pods-MakeItTooUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

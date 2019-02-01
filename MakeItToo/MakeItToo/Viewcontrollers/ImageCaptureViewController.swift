@@ -49,13 +49,13 @@ class ImageCaptureViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func btnSaveAction(_ sender: Any) {
         let imgData = UIImagePNGRepresentation(self.imgScanned.image!)
-        ServiceManager.sharedManager.uploadImage(imgData!, folderId: folder.folderId!) { (resp) in
-            print("resp = \(resp)")
-        }
+//        ServiceManager.sharedManager.uploadImage(imgData!, folderId: folder.folderId!) { (resp) in
+//            print("resp = \(resp)")
+//        }
     }
     
     @IBAction func btnRetakeAction(_ sender: Any) {
-        showImagePicker()
+//        showImagePicker()
     }
     
     //MARK : Image picker delegate

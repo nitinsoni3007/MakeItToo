@@ -73,6 +73,8 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
         let cellId = "fileCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         let imgView = cell.contentView.viewWithTag(101) as! UIImageView
+        imgView.layer.cornerRadius = 8.0
+        imgView.clipsToBounds = true
 //        imgView.image = UIImage(named: arrFiles[indexPath.item])
         DispatchQueue.global().async {
             if let url = URL(string: self.arrFileContents[indexPath.item].imageSmall){
@@ -82,17 +84,25 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
                     imgView.image = UIImage(data: imgData)
                 }
             }catch {
-                
+
             }
             }
         }
+//        imgView.image = (UIApplication.shared.delegate as! AppDelegate).currImage
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let fileContentVC = self.storyboard?.instantiateViewController(withIdentifier: "FileContentDetailsViewController") as! FileContentDetailsViewController
+        self.navigationController?.pushViewController(fileContentVC, animated: true)
+    }
+    
     //MARK: scannerView delegate
-    func didAddFile(_ img: UIImage) {
+    func didAddFile() {
         
 //        self.arrFiles.append(img)
+//        self.lblNoItem.isHidden = true
+//        self.cvFile.isHidden = false
 //            self.cvFile.reloadData()
         self.fetchContents(folder.folderId!)
         

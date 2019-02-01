@@ -15,6 +15,11 @@ class ViewController: UIViewController, LoginNavDelegate {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(logMeOut), name: NSNotification.Name.init(rawValue: "logMeOut"), object: nil)
         // Do any additional setup after loading the view, typically from a nib.
+        if UserDefaults.standard.bool(forKey: GlobalConstants.USER_LOGGEDIN) {
+            showHome()
+        }else {
+            showLoginView()
+        }
     }
     
     @objc func logMeOut() {
@@ -30,11 +35,7 @@ class ViewController: UIViewController, LoginNavDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if UserDefaults.standard.bool(forKey: GlobalConstants.USER_LOGGEDIN) {
-            showHome()
-        }else {
-            showLoginView()
-        }
+        
     }
     
     func showLoginView() {
