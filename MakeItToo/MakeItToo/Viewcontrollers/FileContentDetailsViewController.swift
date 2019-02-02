@@ -14,14 +14,33 @@ class FileContentDetailsViewController: UIViewController {
     @IBOutlet weak var lblSKU: UILabel!
     @IBOutlet weak var lblDateTime: UILabel!
     var sku = ""
-    var fileImg : UIImage?
+    var fileImgUrlStr : String?
+    var imgSmall : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        lblSKU.text = (UIApplication.shared.delegate as! AppDelegate).currSKU
-//        imgView.image = (UIApplication.shared.delegate as! AppDelegate).currImage
+        imgView.image = imgSmall//(UIApplication.shared.delegate as! AppDelegate).currImage
 //        lblDateTime.text = (UIApplication.shared.delegate as! AppDelegate).currTime
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.fileImgUrlStr != nil {
+        DispatchQueue.global().async {
+            if let url = URL(string: self.fileImgUrlStr!){
+                do {
+                    let imgData = try Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.imgView.image = UIImage(data: imgData)
+                    }
+                }catch {
+                    
+                }
+            }
+        }
+        }
     }
 
     override func didReceiveMemoryWarning() {

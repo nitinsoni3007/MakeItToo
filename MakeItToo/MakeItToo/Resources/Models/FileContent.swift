@@ -16,6 +16,7 @@ class FileContent {
     var imageId = ""
     var imageSmall = ""
     var userId = ""
+    var imgData: Data?
     
     init(_ dict: [String: String]) {
         self.crd = dict["crd"]!

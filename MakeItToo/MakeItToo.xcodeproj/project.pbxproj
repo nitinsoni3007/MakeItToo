@@ -28,6 +28,7 @@
 		18259B9221FE27FA0028A744 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9121FE27FA0028A744 /* Validations.swift */; };
 		18259B9421FE2EED0028A744 /* PopUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18259B9321FE2EED0028A744 /* PopUps.swift */; };
 		18B74BAE2204B01200CE6253 /* FileContentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B74BAD2204B01200CE6253 /* FileContentDetailsViewController.swift */; };
+		18C3B2342205BE970089620E /* LoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B2332205BE970089620E /* LoderView.swift */; };
 		18E325DE2202F4CC0084B5E7 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325DD2202F4CC0084B5E7 /* Folder.swift */; };
 		18E325E0220306090084B5E7 /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325DF220306090084B5E7 /* ImageCaptureViewController.swift */; };
 		18E325E2220366C00084B5E7 /* FileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E325E1220366C00084B5E7 /* FileContent.swift */; };
@@ -81,6 +82,7 @@
 		18259B9121FE27FA0028A744 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		18259B9321FE2EED0028A744 /* PopUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUps.swift; sourceTree = "<group>"; };
 		18B74BAD2204B01200CE6253 /* FileContentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContentDetailsViewController.swift; sourceTree = "<group>"; };
+		18C3B2332205BE970089620E /* LoderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoderView.swift; sourceTree = "<group>"; };
 		18E325DD2202F4CC0084B5E7 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		18E325DF220306090084B5E7 /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
 		18E325E1220366C00084B5E7 /* FileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContent.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		18259B8421FDB90D0028A744 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18C3B2322205BE870089620E /* CustomClasses */,
 				18E325DC2202F4BB0084B5E7 /* Models */,
 				18259B8D21FDE6620028A744 /* ServiceManager */,
 			);
@@ -230,6 +233,14 @@
 				18259B9321FE2EED0028A744 /* PopUps.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18C3B2322205BE870089620E /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				18C3B2332205BE970089620E /* LoderView.swift */,
+			);
+			path = CustomClasses;
 			sourceTree = "<group>";
 		};
 		18E325DC2202F4BB0084B5E7 /* Models */ = {
@@ -477,6 +488,7 @@
 				1815A62121FC83330052A2CE /* LoginViewController.swift in Sources */,
 				18259B8621FDB91C0028A744 /* Constants.swift in Sources */,
 				1815A5EF21FC826A0052A2CE /* ViewController.swift in Sources */,
+				18C3B2342205BE970089620E /* LoderView.swift in Sources */,
 				18E325DE2202F4CC0084B5E7 /* Folder.swift in Sources */,
 				18259B8821FDC47F0028A744 /* LoginNav.swift in Sources */,
 				18E325E2220366C00084B5E7 /* FileContent.swift in Sources */,

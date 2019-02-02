@@ -28,12 +28,13 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func fetchContents(_ folderId: String) {
+        LoadingView.shared.showOverlay(nil)
         ServiceManager.sharedManager.callAPI(APIAction.GET_CONTENTS + folderId, method: "GET", params:[String: String](), success: { (resp) in
             print("resp = \(resp)")
             let arrDicts = resp["data"] as? [[String: String]] ?? [[String: String]]()
             self.arrFileContents = arrDicts.map{FileContent.init($0)}
             DispatchQueue.main.async {
-               
+                LoadingView.shared.hideOverlayView()
             if self.arrFileContents.count == 0 {
                 self.lblNoItem.isHidden = false
                 self.cvFile.isHidden = true
@@ -44,6 +45,7 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
                 }
             }
         }) { (reason) in
+            LoadingView.shared.hideOverlayView()
             print("failedWith reason = \(reason)")
         }
     }
@@ -76,10 +78,16 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
         imgView.layer.cornerRadius = 8.0
         imgView.clipsToBounds = true
 //        imgView.image = UIImage(named: arrFiles[indexPath.item])
+        
+        let fileContent = self.arrFileContents[indexPath.item]
+        if fileContent.imgData != nil {
+            imgView.image = UIImage(data: fileContent.imgData!)
+        }else {
         DispatchQueue.global().async {
-            if let url = URL(string: self.arrFileContents[indexPath.item].imageSmall){
+            if let url = URL(string: fileContent.imageSmall){
             do {
             let imgData = try Data(contentsOf: url)
+                fileContent.imgData = imgData
                 DispatchQueue.main.async {
                     imgView.image = UIImage(data: imgData)
                 }
@@ -88,12 +96,16 @@ class FolderDetailsViewController: UIViewController, UICollectionViewDelegate, U
             }
             }
         }
+        }
 //        imgView.image = (UIApplication.shared.delegate as! AppDelegate).currImage
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fileContentVC = self.storyboard?.instantiateViewController(withIdentifier: "FileContentDetailsViewController") as! FileContentDetailsViewController
+        let fileContent = self.arrFileContents[indexPath.item]
+        fileContentVC.fileImgUrlStr = fileContent.imageBig
+        fileContentVC.imgSmall = UIImage(data: fileContent.imgData!)
         self.navigationController?.pushViewController(fileContentVC, animated: true)
     }
     

@@ -23,9 +23,11 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var folder: Folder!
     var imgScanned = false
     
+    @IBOutlet weak var lblTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.lblTitle.text = folder.folderName!
         // Do any additional setup after loading the view.
     }
     
@@ -89,9 +91,11 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         //previewLayer.frame = self.scennerViewShipment.layer.bounds
         print(self.scennerView.frame.origin.y)
-        previewLayer.frame = CGRect(x: 0, y: 0, width:  self.view.frame.size.width, height: self.scennerView.frame.size.height)
+        previewLayer.frame = CGRect(x: 0, y: 0, width:  self.scennerView.frame.size.width, height: self.scennerView.frame.size.height)
         previewLayer.videoGravity = .resizeAspectFill
         self.scennerView.layer.addSublayer(previewLayer)
+        self.scennerView.clipsToBounds = true
+        
         self.startScanning()
         
         
@@ -182,11 +186,13 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     func uploadImage(_ imgData: Data, img: UIImage) {
         
+        LoadingView.shared.showOverlay(nil)
         ServiceManager.sharedManager.uploadImageNew(imgData, folderId: folder.folderId!) { (response) in
             print("resp = \(response)")
             self.hideImagePicker()
             self.delegate?.didAddFile()
             self.navigationController?.popViewController(animated: true)
+            LoadingView.shared.hideOverlayView()
         }
     }
     

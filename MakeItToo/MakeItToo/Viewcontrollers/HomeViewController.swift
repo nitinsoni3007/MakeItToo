@@ -45,11 +45,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        lblNoItem.isHidden = false
         //else
 //        collectionView.isHidden = false
+        LoadingView.shared.showOverlay(nil)
         ServiceManager.sharedManager.callAPI(APIAction.GET_FOLDERS, method: "GET", params: [String:String](), success: { (response) in
             print("resp = \(response)")
             let arrDicts = response["data"] as? [[String: String]] ?? [[String: String]]()
             self.arrFolders = arrDicts.map{Folder.init($0)}
             DispatchQueue.main.async {
+                LoadingView.shared.hideOverlayView()
                 if self.arrFolders.count > 0 {
                 self.createNewFolderHUD.isHidden = true
                 //                arrFolders.append(folderName)
@@ -65,6 +67,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             
         }) { (reason) in
+            LoadingView.shared.hideOverlayView()
             print("failed = \(reason)")
         }
         
@@ -80,6 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func btnCreateAction(_ sender: Any) {
+        self.view.endEditing(true)
         if let folderName = txtFolderName.text{
             if !folderName.isEmpty {
 //                createNewFolderHUD.isHidden = true
@@ -94,10 +98,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func addFolder(_ folderName: String) {
+        LoadingView.shared.showOverlay(nil)
         ServiceManager.sharedManager.callAPI(APIAction.CREATE_FOLDER, method: "POST", params: ["folderName":folderName], success: { (response) in
             print("resp = \(response)")
+            LoadingView.shared.hideOverlayView()
             self.loadFolders()
         }) { (reason) in
+            LoadingView.shared.hideOverlayView()
             self.showAlert(title: "Folder creation faild", message: reason)
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct GlobalConstants{
     static let USER_LOGGEDIN = "userLoggedIn"
@@ -24,6 +25,8 @@ struct APIAction {
     static let GET_CONTENTS = "folder/getImage?folderId="
 }
 
+let themeColor = UIColor(red: 193/255.0, green: 8/255.0, blue: 20/255.0, alpha: 1.0)
+let themeLightColor = UIColor(red: 197/255.0, green: 98/255.0, blue: 114/255.0, alpha: 1.0)
 //ttp://swint.co.md-76.webhostbox.net/makeittoo/index.php/service/folder/uploadImage
 
 //registration :
